@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html >
+<body  align="center" style="background-color:green;">
+<head>
+  <meta charset="UTF-8">
+  <title>Banking Hackathon</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <style>
+      body {
+        font-family: 'Tangerine', serif;
+        font-size: 28px;
+      }
+    </style>
+
+
+</head>
+
+<body>
+ <div class="login">
+	<h1 style="text-align:center">Predicting Interest Rate for Loan Applicants(XGB)</h1>
+
+    <form align="center" action="{{ url_for('predict')}}"method="post">
+    	<input type="text" style="text-align:center" name="Loan_Amount_Requested" placeholder="Loan_Amount_Requested" required="required" />
+        <br>
+		<input type="text" style="text-align:center" name="Annual_Income" placeholder="Annual_Income" required="required" />
+        <br>
+        <input type="text" style="text-align:center" name="Debt_To_Income" placeholder="Debt_To_Income" required="required" />
+        <br>
+        <input type="text" style="text-align:center" name="Inquiries_Last_6Mo" placeholder="Inquiries_Last_6Mo" required="required" />
+        <br>
+        <input type="text" style="text-align:center" name="Months_Since_Deliquency" placeholder="Months_Since_Deliquency" required="required" />
+        <br>
+		<input type="text" style="text-align:center" name="Number_Open_Accounts" placeholder="Number_Open_Accounts" required="required" />
+        <br>
+        <input type="text" style="text-align:center" name="Debt" placeholder="Debt" required="required" />
+        <br>
+        <input type="text" style="text-align:center" name="Closed_Accounts" placeholder="Closed_Accounts" required="required" />
+        <br>
+		<input type="text" style="text-align:center" name="Length_Employed" placeholder="Length_Employed" required="required" />
+        <br>
+        <input type="text" style="text-align:center" name="Home_Owner" placeholder="Home_Owner" required="required" />
+        <br>
+        <input type="text" style="text-align:center" name="Income_Verified" placeholder="Income_Verified" required="required" />
+        <br>
+        <input type="text" style="text-align:center" name="Purpose_Of_Loan" placeholder="Purpose_Of_Loan" required="required" />
+        <br>
+        <input type="text" style="text-align:center" name="Gender" placeholder="Gender" required="required" />
+        <br>
+
+
+        <button align="center" type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+     {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
